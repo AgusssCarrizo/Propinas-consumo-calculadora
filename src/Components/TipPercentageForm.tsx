@@ -21,6 +21,7 @@ const tipOptions = [
 type TipPercentageFormProps = {
    setTip: Dispatch<SetStateAction<number>>;
 };
+
 export default function TipPercentageForm({setTip}: TipPercentageFormProps) {
    return (
       <div>
