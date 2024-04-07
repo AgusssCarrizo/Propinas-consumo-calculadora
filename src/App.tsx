@@ -1,10 +1,11 @@
 import {menuItems} from "./Data/db";
 import MenuItems from "./Components/MenuItems";
 import OrderContents from "./Components/OrderContents";
+import TipPercentageForm from "./Components/TipPercentageForm";
 import OrderTotal from "./Components/OrderTotal";
 import useOrder from "./hooks/useOrder";
 function App() {
-   const {order, addItems, removeItem} = useOrder();
+   const {order, addItems, removeItem, tip, setTip} = useOrder();
    return (
       <>
          <header className="bg-teal-400 py-5">
@@ -23,7 +24,8 @@ function App() {
             </div>
             <div className="border border-dashed border-slate-300 p-5 rounded-lg space-y-10">
                <OrderContents order={order} removeItem={removeItem} />
-               <OrderTotal order={order} />
+               <TipPercentageForm setTip={setTip} />
+               <OrderTotal order={order} tip={tip} />
             </div>
          </main>
       </>
